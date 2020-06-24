@@ -1,10 +1,12 @@
 # istian
+Digital platform for the members in the institute.
+Below are the child applications of istian parent project:
 
 # Digital Notice
-Notices posting digitally, One part of istian project.
+Digital platform for departments to post notices.
 
 # TPO Office
-sc
+Digital office for Training and Placement Officers to send posts and to analyze student data.
 
 # STUD Home
-dv
+Digital home for students for receiving all services in one place like TPO posts, Digital Notices etc.
