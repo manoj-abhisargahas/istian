@@ -1,0 +1,47 @@
+# The name of your automated cloud pipeline visible on GitHub
+name: Build and Push Docker Image to GHCR
+
+# Trigger: Run this pipeline automatically every time code is pushed to the 'main' branch
+on:
+  push:
+    branches:
+      - main
+
+# Define the absolute minimum permissions needed for security (DevSecOps Best Practice)
+permissions:
+  contents: read # Allows GitHub to read your repository code
+  packages: write # Allows GitHub to write and upload the finished image to GitHub Packages (GHCR)
+
+jobs:
+  build-and-push:
+    runs-to: ubuntu-latest # Spins up a clean, temporary Linux server in the cloud to build your image
+
+    steps:
+      # Step 1: Fetch all your code files from your GitHub repository into the cloud runner
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      # Step 2: Log into the secure GitHub Container Registry (GHCR) using automated safety tokens
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }} # Automatically inserts your GitHub username
+          password: ${{ secrets.GITHUB_TOKEN }} # Seamlessly authenticates without leaking passwords
+      
+      # Step 3: Extract tags and text labels so your image is tracked by version history
+      - name: Extract Docker Metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository }}/istian # Sets up your unique cloud image address
+
+      # Step 4: Build your production Docker Image using your Dockerfile and push it live to the registry
+      - name: Build and Push Production Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: . # Look inside your project root folder
+          file: ./Dockerfile # Read your verified Dockerfile recipe
+          push: true # Upload it immediately upon successful compilation
+          tags: ${{ steps.meta.outputs.tags }} # Labels it as "latest"
+          labels: $ {{ steps.meta.outputs.labels }}
