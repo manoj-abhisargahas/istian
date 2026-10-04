@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   build-and-push:
-    runs-to: ubuntu-latest # Spins up a clean, temporary Linux server in the cloud to build your image
+    runs-on: ubuntu-latest # Spins up a clean, temporary Linux server in the cloud to build your image
 
     steps:
       # Step 1: Fetch all your code files from your GitHub repository into the cloud runner
