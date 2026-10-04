@@ -1,0 +1,19 @@
+#notices-view-body, #notices-view-body-neigh {
+	width: 100%;
+}
+
+#new_post-button > .new_post-name {
+	display: none;
+}
+
+#app-name-part-notice_by {
+	max-width: 60px;
+}
+
+#app-name {
+    font-size: 18px;
+}
+
+.app-name-holder {
+	margin-left: 2px;
+}

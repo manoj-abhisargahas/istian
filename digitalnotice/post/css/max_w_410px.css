@@ -1,0 +1,18 @@
+#account-actions {
+	width: 100%;
+}
+
+#account-actions-main-body {
+	border-radius: 0;
+}
+
+#account-actions-main-body {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+#app-name {
+	font-size: 16px;
+}
+button.profile-button .by_profile.dept_profile{
+	display: none;
+}

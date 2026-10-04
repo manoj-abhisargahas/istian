@@ -1,0 +1,47 @@
+services:
+  # --- PHP Web Application Container ---
+  web-app:
+    build: . # Instructs Docker to build the image using the Dockerfile in this current folder
+    container_name: web-app-local # Gives a friendly name to this container when running locally
+    restart: always # Auto-recovery loop: instantly restarts the web server if it ever crashes
+    ports:
+      - "8080:8080" # Opens the doorway: maps external Port 8080 on your PC to internal Port 8080
+    environment:
+      - DB_HOST=db # Tells PHP to find the database using the container name "db" on our private network
+      - DB_USER=user # The login username for your PHP code to connect to MySQL
+      - DB_PASSWORD=placeholder_local_password # The login password for your PHP code to connect to MySQL
+      - DB_NAME_DIGITAL_DB=digital_notice_db # The specific database name your PHP code will read and write to
+      - DB_NAME_ISTIAN_DB=istian_db # second db
+    volumes:
+      - ".:/var/www/html" # to sync files live!
+    networks:
+      - app-network # Hooks this container into our private virtual highway
+    depends_on:
+      - db # Ensures the MySQL database starts up completely before the PHP app tries to load
+  
+  # --- MySQL Database Container ---
+  db:
+    image: mysql:8.0 # Tells Docker to automatically pull the official pre-built MySQL 8.0 system from the web
+    container_name: mysql-db-local # Gives a friendly name to this container when running locally
+    restart: always # Auto-recovery loop: instantly restarts the database if it ever crashes
+    ports:
+      - "3307:3306" # Only in developemnt: Exposes MySQL out to your Windows PC on Port 3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=placeholder_local_root_password # Sets the master administration password for MySQL
+      - MYSQL_DATABASE=digital_notice_db # Instructs MySQL to automatically create this database on startup
+      - MYSQL_USER=user # Instructs MySQL to create a standard, limited-privilege user account
+      - MYSQL_PASSWORD=placeholder_local_password # Sets the password for that standard user account
+    volumes:
+      - "db_data:/var/lib/mysql" # Persistent storage: maps database files to a safe, permanent folder on your hard drive
+      - "./init.sql:/docker-entrypoint-initdb.d/init.sql" # Automatically runs your database tables layout script on first launch
+    networks:
+      - app-network # Hooks this container into the exact same private virtual highway so it can talk to the PHP app
+
+# --- Persistent Data Volumes ---
+volumes:
+  db_data: # Declares the permanent storage box so your database records aren't lost when containers stop
+
+# --- Private Virtual Networks ---
+networks:
+  app-network:
+    driver: bridge # Sets up an isolated local network highway that only these two containers can access

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<notice>
+	<upload_id>IMRAN-1587533897</upload_id>
+	<notice_heading>Istian</notice_heading>
+	<notice_text>Launching our IMRAN new domain for purpose of providing services under this domain mainly digitally.
+Under this domain, IMRAN applications like STUD Home, TPO Office, DigitalNotice are developed.</notice_text>
+	<notice_by>YOU</notice_by>
+	<upload_time>1587534073</upload_time>
+	<last_edited_time>1587691115</last_edited_time>
+	<expire_time>1590949800</expire_time>
+	<for_years>
+		<year>ALL</year>
+	</for_years>
+	<for_branches>
+		<branch>ALL</branch>
+	</for_branches>
+	<queries_answers>
+		<query_answer>
+			<query_index>6</query_index>
+			<student_rollno>16kb1a05a3</student_rollno>
+			<query>Is it developed?</query>
+			<query_time>1587534400</query_time>
+			<answered_status>NO</answered_status>
+		</query_answer>
+		<query_answer>
+			<query_index>5</query_index>
+			<student_rollno>16kb1a05a3</student_rollno>
+			<query>for it maintainace is there any employees selected?</query>
+			<query_time>1587534300</query_time>
+			<answered_status>NO</answered_status>
+		</query_answer>
+		<query_answer>
+			<query_index>4</query_index>
+			<student_rollno>16kb1a05b5</student_rollno>
+			<query>is it in testing?</query>
+			<query_time>1587534200</query_time>
+			<answered_status>NO</answered_status>
+		</query_answer>
+		<query_answer>
+			<query_index>3</query_index>
+			<student_rollno>16kb1a05b5</student_rollno>
+			<query>Is development fully completed?</query>
+			<query_time>1587534100</query_time>
+			<answered_status>PUB</answered_status>
+			<tpo_username>YOU</tpo_username>
+			<answer>Sample deployment also happend successfully!</answer>
+			<answer_time>1587535200</answer_time>
+			<answer_last_edited_time>1587740215</answer_last_edited_time>
+		</query_answer>
+		<query_answer>
+			<query_index>2</query_index>
+			<student_rollno>16kb1a05b5</student_rollno>
+			<query>they can hire students for this college company?</query>
+			<query_time>1587534073</query_time>
+			<answered_status>PRI</answered_status>
+			<tpo_username>YOU</tpo_username>
+			<answer>May be possible!</answer>
+			<answer_time>1587535500</answer_time>
+		</query_answer>
+		<query_answer>
+			<query_index>0</query_index>
+			<student_rollno>16kb1a05a3</student_rollno>
+			<query>When it was launching officially by college?</query>
+			<query_time>1587534073</query_time>
+			<answered_status>PUB</answered_status>
+			<tpo_username>YOU</tpo_username>
+			<answer>we are at last phase of this sem right! that's why it will be implemented next year!</answer>
+			<answer_time>1587535073</answer_time>
+		</query_answer>
+</queries_answers>
+</notice>

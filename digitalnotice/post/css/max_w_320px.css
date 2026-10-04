@@ -1,0 +1,25 @@
+.account-actions-switch-options {
+	flex-direction: column-reverse;
+	align-items: flex-start;
+}
+#notice_files_button_name {
+	display: none;
+}
+#new_notice-options-tool-bar {
+	padding: 0 10px;
+}
+
+input[id|="heading_for_label"] ~ label[id|="label-heading_for_label"] {
+	padding-left: 11px;
+	padding-right: 11px;
+	font-size: 11.5px;
+}
+
+label[id|="label-heading_for_label"] > span.left_down_arrow {
+	width: 3.5px;
+	height: 3.5px;
+}
+[id|="notice-sec"] {
+	padding: 0 10px;
+}
+

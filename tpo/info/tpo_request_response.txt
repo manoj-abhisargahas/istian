@@ -1,0 +1,256 @@
+TPO OFFICE:
+""""""""""
+upload attached file
+change attached file
+delete attached file
+cancel notice
+send notice
+get all notices
+get my notices
+get single notice
+edit notice
+change expiry time
+delete notice
+answer query
+edit answer
+change query ans privacy
+delete answer
+add placed students
+add placed student
+delete placed student
+------------------------
+
+upload attached file:
+""""""""""""""""""""
+http://localhost/istian/tpo/upload_attached_file.php?upload_id=IMRAN-1589109704
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v, file)
+
+succcess:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","fileserverbasename":"dfdee0c123","errors":[]}
+
+failure":
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","fileserverbasename":"false","errors":["100"]}
+{"sessionid":"","fileserverbasename":"false","errors":["115"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","fileserverbasename":"","errors":[119]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","fileserverbasename":"","errors":[120]}
+
+change attached file:
+""""""""""""""""""""
+http://localhost/istian/tpo/change_attached_file.php?upload_id=IMRAN-1589109704&old_fileserverbasename=abcdefgh.jpg
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v, file)
+
+succcess:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","fileserverbasename":"ca2ce0c750","errors":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","fileserverbasename":"false","errors":["100"]}
+{"sessionid":"","fileserverbasename":"false","errors":["115"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","fileserverbasename":"","errors":[119]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","fileserverbasename":"","errors":[120]}
+
+delete attached file:
+""""""""""""""""""""
+http://localhost/istian/tpo/delete_attached_file.php?upload_id=IMRAN-1589109704&fileserverbasename=abcdefgh.jpg
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+succcess:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"true","errors":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":[119]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":[120]}
+
+cancel notice:
+"""""""""""""
+http://localhost/istian/tpo/cancel_notice.php?upload_id=IMRAN-1589109704
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:(nothing)
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+
+send notice:
+"""""""""""
+http://localhost/istian/tpo/send_notice.php?request_time=1583575462&upload_id=IMRAN-1589109704&notice_heading=Test&notice_text=app%20testing&years_sel=III,IV&branches_sel=CSE,ECE,EEE&expire_time=1583519400
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"true","errors":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["126, 127, 128, 129, 130"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["131"]}
+
+get all notices:
+"""""""""""""""
+http://localhost/istian/tpo/get_all_notices_xml.php
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+get_all_notices.xml file
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+
+get my notices:
+"""""""""""""""
+http://localhost/istian/tpo/get_my_notices_xml.php
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+get_my_notices.xml file
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+
+get single notice:
+"""""""""""""""""
+http://localhost/istian/tpo/get_single_notice_xml.php
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:(comes in 3 ways depending on which post user clicks)
+get_single_notice(notice_by_me).xml file
+get_single_notice(notice_by_me)(expired).xml file
+get_single_notice(notice_by_other).xml file
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+
+edit notice:
+"""""""""""""
+http://localhost/istian/tpo/edit_notice.php?request_time=1583584315&upload_id=IMRAN-1234&notice_heading=Test&notice_text=app%20testing&years_sel=III,IV&branches_sel=CSE,ECE,EEE
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"true","errors":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["126, 127, 128, 129, 130"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["132"]}
+
+change expiry time:
+""""""""""""""""""
+http://localhost/istian/tpo/change_expire_time.php?upload_id=IMRAN-1234&expire_time=1583995326
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"true","errors":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["138"]}
+
+delete notice:
+"""""""""""""
+http://localhost/istian/tpo/delete_notice.php?upload_id=IMRAN-1589109704
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"true","errors":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+
+answer query:
+""""""""""""
+http://localhost/istian/tpo/answer_query.php?request_time=1587534073&upload_id=IMRAN-1234&query_index=0&answered_status=pri&answer=it%20is%20it.
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"true","errors":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["135"]}
+
+edit answer:
+""""""""""""
+http://localhost/istian/tpo/edit_answer.php?request_time=1587833020&upload_id=IMRAN-1234&query_index=0&answer=it%20is%20changed.
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"true","errors":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["136"]}
+
+change query ans privacy:
+""""""""""""""""""""""
+http://localhost/istian/tpo/change_query_ans_privacy.php?upload_id=IMRAN-1234&query_index=0&answered_status=pub
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"true","errors":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":[]}
+
+delete answer:
+""""""""""""
+http://localhost/istian/tpo/delete_answer.php?upload_id=IMRAN-1234&query_index=0
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"true","errors":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["137"]}
+
+add placed students:
+"""""""""""""""""""
+http://localhost/istian/tpo/add_placed_students.php?comp_name=tcs&rollnos=16kb1a05g8,16kb1a0501,16kb1a05b5
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"true","errors":[],"errrollnums":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"],"errrollnums":[]}
+{"sessionid":"","success_msg":"false","errors":["115"],"errrollnums":[]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":[],"errrollnums":[16kb1a05g8,16kb1a05b5]}
+
+add placed student:
+""""""""""""""""""
+http://localhost/istian/tpo/add_placed_student.php?comp_name=tcs&rollno=16kb1a05b5
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"true","errors":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["133"]}
+
+delete placed student:
+"""""""""""""""""""""
+http://localhost/istian/tpo/delete_placed_student.php?comp_name=tcs&rollno=16kb1a05b5
+post(sessionid=tpolggd-8clp3f7aspr4h0t0b5t560hu6v)
+
+success:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"true","errors":[]}
+
+failure:
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+{"sessionid":"tpolggd-8clp3f7aspr4h0t0b5t560hu6v","success_msg":"false","errors":["134"]}

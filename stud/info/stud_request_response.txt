@@ -1,0 +1,70 @@
+STUD HOME:
+"""""""""
+get tpo notices
+get tpo single notice
+get student full details
+ask query
+delete query
+------------------------
+
+get tpo notices:
+"""""""""""""""
+http://localhost/istian/student/get_tpo_notices_xml.php
+post(sessionid=studlggd-dlqatganq518r87deau653abts)
+
+succcess:
+get_tpo_notices.xml file
+
+failure:
+{"sessionid":"studlggd-dlqatganq518r87deau653abts","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+
+get tpo single notice:
+"""""""""""""""""""""
+http://localhost/istian/student/get_tpo_single_notice_xml.php?upload_id=IMRAN-1587533897
+post(sessionid=studlggd-dlqatganq518r87deau653abts)
+
+succcess:
+get_tpo_single_notice.xml file
+
+failure:
+{"sessionid":"studlggd-dlqatganq518r87deau653abts","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+
+get student full details:
+""""""""""""""""""""""""
+http://localhost/istian/student/get_student_full_details_xml.php
+post(sessionid=studlggd-dlqatganq518r87deau653abts)
+
+succcess:
+get_student_full_details.xml file
+
+failure:
+{"sessionid":"studlggd-dlqatganq518r87deau653abts","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+
+ask query:
+"""""""""
+http://localhost/istian/student/ask_query.php?request_time=1587541060&upload_id=IMRAN-1587533897&query=what%20is%20it?
+post(sessionid=dlqatganq518r87deau653abts)
+
+success:
+{"sessionid":"studlggd-dlqatganq518r87deau653abts","query_index":4,"errors":[]}
+
+failure:
+{"sessionid":"studlggd-dlqatganq518r87deau653abts","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+{"sessionid":"studlggd-dlqatganq518r87deau653abts","success_msg":"false","errors":["124"]}
+
+delete query:
+""""""""""""
+http://localhost/istian/student/delete_query.php?upload_id=IMRAN-1587533897&queryindex=7
+post(sessionid=dlqatganq518r87deau653abts)
+
+success:
+{"sessionid":"studlggd-dlqatganq518r87deau653abts","success_msg":"true","errors":[]}
+
+failure:
+{"sessionid":"studlggd-dlqatganq518r87deau653abts","success_msg":"false","errors":["100"]}
+{"sessionid":"","success_msg":"false","errors":["115"]}
+{"sessionid":"studlggd-dlqatganq518r87deau653abts","success_msg":"false","errors":["125"]}

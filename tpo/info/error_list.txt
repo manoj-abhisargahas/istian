@@ -1,0 +1,46 @@
+100: Database Connection Error.
+101: email invalid
+102: username invalid
+103: password invalid
+104: your email is not associated with the college
+105: Account activation already done with this email.
+106: email is not accepted by delivery system
+107: wrong otp
+108: signup failed
+109: otp expired.
+110: password update failed.
+113: no user
+114: email or password wrong
+115: session loggedout
+116: company name invalid
+117: student roll numbers invalid
+118: company name already exists.
+	#1602 - Duplicate entry 'company_name' for key 'PRIMARY'
+	
+119: company cannot be deleted.
+	#1451 - Cannot delete or update a parent row: a foreign key constraint fails (%s)
+120: Email or Password Wrong.
+121: No account with this email.
+122: Username already exists.
+123: Account Activation failed.
+124: Query Not Inserted.
+125: Query Not Deleted.
+126: upload_id is null
+127: notice heading is empty
+128: years not selected
+129: branches not selected
+130: notice expiry date is empty
+131: send notice failed.
+132: edit notice failed.
+133: adding student placed company failed.
+134: deleting student placed company failed.
+135: answered failed.
+136: edit answer failed.
+137: delete answer failed.
+138: change expire time failed.
+139: answer empty.
+140: query empty
+141: change email failed.
+142: otp empty.
+143: username empty.
+144: username update failed.

@@ -1,0 +1,26 @@
+[at client]image not found
+[at client]digital notice logo
+[at client]logout logo
+[at client]enable password
+[at client]digital notice post button css & actions
+[at client]make dept profile icon
+[at client &
+at server]one server call cannot override another server call
+[at client &
+at server]dynamically getting branches/sections
+[at server]send mail
+[at server]file download link creation
+[at server]on loging out delete files if uploaded to post
+[at server]error suppressing.
+[at server]password encryption(another implementation:sha2(pword,256))
+[at server]sql injection
+[at server]check login validate (is there any way)
+[at server]password max. len. (md5 algo. max. parsable len.)
+[at server]send error_list(tpo)
+[at server]tpo, student: uncomment login, db error on get_xml
+TPO_TAPS:
+""""""""
+Connection
+
+not set escapeForXML for TPO/STUD
+only set for DigitalNotice for now

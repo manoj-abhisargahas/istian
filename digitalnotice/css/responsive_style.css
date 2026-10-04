@@ -1,0 +1,36 @@
+@media (max-width:500px) {
+	#notices-view-body {
+		width: 100%;
+	}
+	.p-n-sec-files {
+		grid-template-columns: auto;
+	}
+}
+
+@media (max-width:470px) {
+	.p-n-sec-info {
+		display: block;
+	}
+	.p-n-info-sub-2 {
+		border: none;
+	}
+	.label_icon_box {
+		width: 25px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transform: none;
+	}
+	.p-n-for {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.p-n-for-sub:first-of-type:after {
+		content: "\25cf";
+		font-family: arial;
+		font-size: 10px;
+		line-height: 0;
+		margin: auto 7px auto 3px;
+		color: #aaa;
+	}
+}

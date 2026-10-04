@@ -1,0 +1,10 @@
+form[id$="account-form"] input[type="submit"] {
+	margin-left: 0;
+}
+.account-actions-switch-options {
+	align-items: flex-end;
+}
+
+#dialog-box {
+	width: 100%;
+}
