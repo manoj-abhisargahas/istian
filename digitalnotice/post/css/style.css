@@ -1820,8 +1820,6 @@ input#required-notice_expiry_date:checked ~ [id|="label-visibility-notice_expiry
 #notice-some-sections {
 	grid-area: 2/1;
 }
-#notice-sec-by {
-}
 #notice-sec-for {
 	grid-area: 3/1;
 }
