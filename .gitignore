@@ -1,3 +1,2 @@
-docker-compose-aws-cloud.yml
-docker-compose-aws-cloud.prod.yml
-test.yml
+aws-server-files
+digitalnotice/post/files

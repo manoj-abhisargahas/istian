@@ -44,4 +44,4 @@ jobs:
           file: ./Dockerfile # Read your verified Dockerfile recipe
           push: true # Upload it immediately upon successful compilation
           tags: ${{ steps.meta.outputs.tags }} # Labels it as "latest"
-          labels: $ {{ steps.meta.outputs.labels }}
+          labels: ${{ steps.meta.outputs.labels }}

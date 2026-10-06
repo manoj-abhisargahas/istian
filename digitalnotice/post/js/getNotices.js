@@ -2,7 +2,6 @@ function getNoticesFromServer_Ajax() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if(xhttp.readyState==4 && xhttp.status==200) {
-			console.log(this.responseText);
 			if(this.responseXML!=null) {
 				displayNotices(this.responseXML.getElementsByTagName("notice"));
 				

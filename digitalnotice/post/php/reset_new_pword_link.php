@@ -28,7 +28,7 @@
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, height=device-height"/>
 		<meta name="theme-color" content="#eee" />
 		<meta name="msapplication-navbutton-color" content="#eee" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="#eee" />
 	</head>
 	<body>
