@@ -114,6 +114,7 @@ function sendNotice() {
 		
 		xhttp.onreadystatechange = function() {
 			if(xhttp.readyState==4 && xhttp.status==200) {
+				console.log(this.responseText);
 				try {
 					var response = JSON.parse(this.responseText);
 					if(response["errors"].length < 1) {

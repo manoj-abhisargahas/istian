@@ -13,7 +13,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 -- 1. Create your secondary databases (the primary one is created by docker-compose)
-CREATE DATABASE IF NOT EXISTS istian_db;
+CREATE DATABASE IF NOT EXISTS istian_db CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 
 -- 2. Ensure your standard user has full clearance to manage all the secondary databases
 GRANT ALL PRIVILEGES ON istian_db.* TO 'user'@'%';
@@ -23,6 +23,7 @@ GRANT ALL PRIVILEGES ON istian_db.* TO 'user'@'%';
 
 -- 3. Select your primary database to create its tables
 USE digital_notice_db;
+ALTER DATABASE digital_notice_db CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -33,7 +34,7 @@ USE digital_notice_db;
 CREATE TABLE IF NOT EXISTS `for_branchs` (
   `upload_id` varchar(50) NOT NULL,
   `notice_for_branch` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -44,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `for_branchs` (
 CREATE TABLE IF NOT EXISTS `for_sections` (
   `upload_id` varchar(50) NOT NULL,
   `notice_for_section` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -55,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `for_sections` (
 CREATE TABLE IF NOT EXISTS `for_years` (
   `upload_id` varchar(50) NOT NULL,
   `notice_for_year` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -70,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `notices` (
   `notice_by` varchar(10) NOT NULL,
   `expire_time` int(20) NOT NULL,
   `upload_time` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `notices_by` (
   `notice_by_name` varchar(10) NOT NULL,
   `notice_by_email` varchar(50) DEFAULT NULL,
   `notice_by_pword` varchar(33) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `notices_by`
@@ -115,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `student` (
   `batch` varchar(10) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
   `pword` varchar(33) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `student`
@@ -140,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `uploaded_files` (
   `upload_id` varchar(50) NOT NULL,
   `uploaded_file_name` varchar(80) NOT NULL,
   `uploaded_file_server_name` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -258,7 +259,7 @@ DELIMITER ;
 
 CREATE TABLE IF NOT EXISTS `companies` (
   `company` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `companies`
@@ -283,7 +284,7 @@ INSERT IGNORE INTO `companies` (`company`) VALUES
 CREATE TABLE IF NOT EXISTS `for_branches` (
   `upload_id` varchar(50) NOT NULL,
   `notice_for_branch` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -294,7 +295,7 @@ CREATE TABLE IF NOT EXISTS `for_branches` (
 CREATE TABLE IF NOT EXISTS `for_years` (
   `upload_id` varchar(50) NOT NULL,
   `notice_for_year` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -310,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `notices` (
   `expire_time` int(20) NOT NULL,
   `upload_time` int(20) NOT NULL,
   `last_edited_time` int(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -329,7 +330,7 @@ CREATE TABLE IF NOT EXISTS `queries_answers` (
   `answer` varchar(500) DEFAULT NULL,
   `answer_time` int(20) DEFAULT NULL,
   `answer_last_edited_time` int(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -342,7 +343,7 @@ CREATE TABLE IF NOT EXISTS `query_files` (
   `query_index` int(5) NOT NULL,
   `uploaded_file_name` varchar(80) NOT NULL,
   `uploaded_file_server_name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -353,7 +354,7 @@ CREATE TABLE IF NOT EXISTS `query_files` (
 CREATE TABLE IF NOT EXISTS `students_placed` (
   `student_rollno` varchar(11) NOT NULL,
   `placed_company` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -365,7 +366,7 @@ CREATE TABLE IF NOT EXISTS `tpo` (
   `email` varchar(50) NOT NULL,
   `username` varchar(10) NOT NULL,
   `pword` varchar(33) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -376,7 +377,7 @@ CREATE TABLE IF NOT EXISTS `tpo` (
 CREATE TABLE IF NOT EXISTS `tpo_info` (
   `name` varchar(20) NOT NULL,
   `email` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tpo_info`
@@ -398,7 +399,7 @@ CREATE TABLE IF NOT EXISTS `uploaded_files` (
   `upload_id` varchar(50) NOT NULL,
   `uploaded_file_name` varchar(80) NOT NULL,
   `uploaded_file_server_name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 

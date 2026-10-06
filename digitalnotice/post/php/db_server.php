@@ -7,6 +7,7 @@
 		$pass = getenv('DB_PASSWORD');
 		$db = getenv('DB_NAME_DIGITAL_DB');
 		$GLOBALS["mysqli"] = new mysqli($host, $user, $pass, $db);
+		$GLOBALS["mysqli"]->set_charset("utf8mb4");
 		return ($GLOBALS["mysqli"]->connect_errno==0);
 	}
 	
