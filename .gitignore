@@ -1,5 +1,3 @@
-aws-server-files
-
 digitalnotice/post/files/*
 !digitalnotice/post/files/.gitkeep
 

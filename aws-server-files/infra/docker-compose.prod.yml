@@ -1,0 +1,87 @@
+# Production website stack configuration layout
+
+services:
+
+  # ------- 1. Automated Schema Extractor (The Init-Container) -------
+  # Shared Named Volume Init-Container pattern
+  init-db-schema:
+    image: ghcr.io/manoj-abhisargahas/istian/istian:main
+    container_name: istian-schema-extractor
+    # Copies the script from the image to the bridge volume, then instantly shuts down
+    command: cp /var/www/html/init.sql /tmp/shared-sql/init.sql
+    volumes:
+      - sql-init-bridge:/tmp/shared-sql
+    networks:
+      - global-proxy-network
+
+  # ------- 2. MySQL Database Container -------
+  # Service block for your persistent MySQL Database Engine
+  database:
+    image: mysql:8.0
+    container_name: mysql-db-prod
+    restart: always
+    ports:
+      # Exposes internal container port 3306 to the host server's localhost 3306 only for your secure HeidiSQL SSH connection
+      - "127.0.0.1:3306:3306"
+    # Hidden operational variables to protect your infrastructure
+    environment:
+      # Sets your private root master password (stays completely safe from public GitHub repositories)
+      - MYSQL_ROOT_PASSWORD=${PROD_MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=${PROD_MYSQL_USER_PASSWORD}
+      # Automatically initializes your empty production database block template
+      # KEEP THIS EXACTLY THE SAME: Matches your PHP connection configurations
+      - MYSQL_DATABASE=digital_notice_db
+    # Maps folders on your server's disk to prevent losing database records on restarts
+    volumes:
+      - db-data:/var/lib/mysql
+      # Mounts the bridge volume containing the freshly extracted init.sql script to "docker-entrypoint-initdb.d" 
+      # here Reading happens from "sql-init-bridge" to "docker-entrypoint-initdb.d" 
+      - sql-init-bridge:/docker-entrypoint-initdb.d
+    networks:
+      - global-proxy-network
+     # Ensures MySQL is fully ready before letting the web application touch it
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "user", "-p${PROD_MYSQL_USER_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      init-db-schema:
+        condition: service_completed_successfully
+
+  # ------- 3. PHP Web Application Container -------
+  # Service block for your core PHP Web Application
+  web-app:
+    # Pulls the container image directly from your public GitHub Packages registry
+    image: ghcr.io/manoj-abhisargahas/istian/istian:main
+    container_name: istian-prod
+    restart: always
+    # AUTOMATION: Automatically grants Apache full write privileges to your exact files directory right on boot!
+    command: sh -c "chown -R www-data:www-data /var/www/html/digitalnotice/post/files && exec apache2-foreground"
+    environment:
+      - DB_HOST=mysql-db-prod
+      - DB_USER=user
+      - DB_PASSWORD=${PROD_MYSQL_USER_PASSWORD}
+      - DB_NAME_DIGITAL_DB=digital_notice_db
+      - DB_NAME_ISTIAN_DB=istian_db
+    volumes:
+      # THE ACCURATE FIX: Mounts the storage box strictly to your exact frontend target directory path!
+      - app-uploads:/var/www/html/digitalnotice/post/files
+    # Connects the app straight to the private virtual highway network we just stood up
+    networks:
+      - global-proxy-network
+    # Forces the website to wait until the database container is fully initialized
+    depends_on:
+      database:
+        condition: service_healthy
+
+volumes:
+  sql-init-bridge:
+  db-data:
+  app-uploads:
+
+# Connects this production file back to the pre-existing global network highway
+networks:
+  global-proxy-network:
+    external: true

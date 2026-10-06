@@ -1,0 +1,49 @@
+# This docker compose file need to be placed on inside /home/ubuntu/infra
+
+# Defines the collection of containers that make up our core system
+services:
+
+  # Service block for the Nginx Proxy Manager automated router
+  nginx-proxy-manager:
+    # Pulls the official, latest stable image for the proxy dashboard
+    image: 'jc21/nginx-proxy-manager:latest'
+    # Auto-recovery loop that restarts the container if it crashes or the server reboots
+    restart: always
+    # Maps the physical server's network gates directly to the container
+    ports:
+      - '80:80' # Public HTTP traffic lane
+      - '443:443' # Public HTTPS encrypted traffic lane
+      - '81:81' # Private administrative web panel lane
+    # Maps folders on your server's disk to prevent losing configurations or SSL certs
+    volumes:
+      - ./npm-data:/data
+      - ./npm-letsencrypt:/etc/letsencrypt
+    # Plugs this router directly into our shared virtual highway network
+    networks:
+       - global-proxy-network
+  
+  # Service block for the Watchtower container watchdog
+  watchtower:
+    # Pulls the latest official automation engine image
+    image: containrrr/watchtower:latest
+    # Tell Watchtower to run with the correct root security privileges so Ubuntu allows it to read the socket.
+    user: "0:0"
+    # Ensures the watchdog turns back on automatically if the server reboots
+    restart: always
+    # Mounts the host server's internal engine room socket so Watchtower can manage containers
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    # Configures hidden background operational environment variables
+    environment:
+      - WATCHTOWER_CLEANUP=true # Automatically deletes old, unused images after updating
+      - WATCHTOWER_POLL_INTERVAL=300 # Checks your GitHub registry for new code images every 5 minutes
+      - DOCKER_API_VERSION=1.44
+
+# Top-level infrastructure block that defines our shared virtual highway network
+networks:
+  # The formal identifier for our bridge communication highway
+  global-proxy-network:
+    # Forces Docker to keep the exact global network name across the entire server
+    name: global-proxy-network
+    # Sets the network behavior type to standard internal bridge routing
+    driver: bridge

@@ -1,0 +1,41 @@
+== College =====================================================================
+
+-- POST-1: --------------------------------------------
+Greetings For New Year!
+Wish you a happy new year and a happy life.
+
+-- POST-2: --------------------------------------------
+College Starting on June 16th
+So now 2nd, 3rd, 4th year students gear up for new semesters!
+Image: nbkrist-top-view.jpg
+
+-- POST-3: --------------------------------------------
+Welcome to NBKRIST! Freshers
+Image: nbkrist-start-gate.png
+
+-- POST-4: --------------------------------------------
+NBKRIST Campus Map
+Hello freshers, don't get confused in 180-Acre campus, just refer this map.
+Image: nbkrist-map.jpg
+
+-- POST-5: --------------------------------------------
+Freshers Reporting
+Hello students who are selected for NBKRIST in EAMCET Counselling, Report at Admin Block on prior to June 15th.
+Image: admin-block.jpeg
+
+
+== CSE Dept =====================================================================
+
+-- POST-1: --------------------------------------------
+A Heartly Welcome to CSE Students!
+Hello Freshers and Seniors, all classes are starting from tommorrow. So, gear up to dig into our Computer Science and Techs.
+image: cse-block.jpg
+
+-- POST-2: --------------------------------------------
+🎉 TECHVYHA 2020!
+The waiting has ended.Volunteers efforts are awesome. We are eagerly waiting for the innovations by students.
+
+🔵 Paper & Poster Presentations
+🟣 Project Expos
+⚪ Tech Workshops
+🟢 Exciting Prizes and many more...

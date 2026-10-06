@@ -104,7 +104,7 @@ button.profile-button {
 }
 
 #app-name-part-notice_by {
-	font-family: Arial;
+	font-family: sans-serif;
 	font-size: 12px;
 	font-weight: 700;
 	color: #777;
@@ -123,7 +123,7 @@ button.profile-button {
 	text-decoration: none;
 	color: #000;
 	font-size: 13px;
-	font-family: arial;
+	font-family: sans-serif;
 	transition: background 0.2s, filter 0.2s;
 }
 
@@ -174,7 +174,7 @@ button.profile-button {
 }
 
 .new_post-name {
-	font-family: arial;
+	font-family: sans-serif;
 	font-weight: 500;
 	font-size: 15px;
 	margin-right: 10px;
@@ -310,7 +310,7 @@ button.profile-button {
 
 #notice_heading_field {
 	transition: border 0.3s;
-	font-family: arial;
+	font-family: sans-serif;
 	font-weight: 400;
 	font-size: 15px;
 	white-space: pre-wrap;
@@ -323,7 +323,7 @@ button.profile-button {
 
 #notice_text_field {
 	color: #666;
-	font-family: Arial;
+	font-family: sans-serif;
 	font-weight: 400;
 	font-size: 12.5px;
 	line-height: 1.25;
@@ -522,7 +522,7 @@ label[for|="notice_image_button"]#notice_image_viewer > #notice_image_button_adj
 	margin-bottom: 5px;
 	box-sizing: border-box;
 	box-shadow: 1px 1px 1px #aaa;
-	font-family: Arial;
+	font-family: sans-serif;
 	position: relative;
 	cursor: pointer;
 	display: flex;
@@ -652,7 +652,7 @@ label[for|="notice_image_button"]#notice_image_viewer > #notice_image_button_adj
 
 #notice-by {
 	color: #777;
-	font-family: Arial;
+	font-family: sans-serif;
 	font-weight: 500;
 	font-size: 11px;
 	letter-spacing: 0.04em;
@@ -1047,7 +1047,7 @@ input[id|="section"]:checked + label[id|="label-section"]:hover {
 	display: flex;
 	flex-direction: column;
 	box-sizing: border-box;
-	font-family: arial;
+	font-family: sans-serif;
 	background-color: #fff;
 	border-radius: 5px;
 	/* box-shadow: 1px 1px 3px #ccc; */
@@ -1069,7 +1069,7 @@ input[id|="section"]:checked + label[id|="label-section"]:hover {
 }
 
 .p-n-sec-heading {
-	font-family: arial;
+	font-family: sans-serif;
 	font-weight: 400;
 	font-size: 15px;
 	white-space: pre-wrap;
@@ -1079,7 +1079,7 @@ input[id|="section"]:checked + label[id|="label-section"]:hover {
 
 .p-n-sec-text {
 	color: #888;
-	font-family: Arial;
+	font-family: sans-serif;
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 1.25;
@@ -1170,7 +1170,7 @@ input[id|="section"]:checked + label[id|="label-section"]:hover {
 	justify-content: center;
 	align-items: center;
 	font-weight: 700;
-	font-family: arial;
+	font-family: sans-serif;
 	margin-right: 10px;
 }
 
@@ -1205,7 +1205,7 @@ input[id|="section"]:checked + label[id|="label-section"]:hover {
 
 .p-n-for-sub:first-of-type:after {
 		content: "\25cf";
-		font-family: arial;
+		font-family: sans-serif;
 		font-size: 10px;
 		line-height: 0;
 		margin: auto 7px auto 3px;
@@ -1609,13 +1609,13 @@ label.options-sec-for-p_n:active ~ .post_cover_screen {
 }
 
 #account-actions-heading {
-	font-family: Arial;
+	font-family: sans-serif;
 	font-size: 20px;
 	margin: 5px;
 }
 
 #account-actions-sub-heading {
-	font-family: Arial;
+	font-family: sans-serif;
 	font-weight: 500;
 	margin: 2px 0 10px;
 	color: #999;
@@ -1624,7 +1624,7 @@ label.options-sec-for-p_n:active ~ .post_cover_screen {
 }
 
 #account-actions-info {
-	font-family: Arial;
+	font-family: sans-serif;
 	font-size: 15px;
 	font-weight: 500;
 	margin: 40px 0 0;
@@ -1636,7 +1636,7 @@ form[id$="account-form"] {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	font-family: Arial;
+	font-family: sans-serif;
 }
 
 form[id$="account-form"] input[type="text"],
@@ -1646,7 +1646,7 @@ form[id$="account-form"] input[type="password"] {
 	border-bottom: 1px solid #ddd;
 	padding: 7px 0;
 	margin: 25px 0 5px;
-	font-family: Arial;
+	font-family: sans-serif;
 	font-size: 16px;
 	font-weight: 500;
 	letter-spacing: 0.02em;
@@ -1807,7 +1807,7 @@ input#required-notice_expiry_date:checked ~ [id|="label-visibility-notice_expiry
 	width: 100%;
 	height: auto;
 	box-sizing: border-box;
-	font-family: arial;
+	font-family: sans-serif;
 	/* overflow: hidden; */
 	display: grid;
 	grid-template-rows: 30px auto 45px auto;

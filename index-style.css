@@ -33,14 +33,17 @@ body::-webkit-scrollbar {
 }
 .head-txt {
     color: #5c809e;
-    font-family: Agency Fb;
-    font-size: clamp(50px,10vh,26vh);
-    margin: 4vh 0 12px;
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(50px,10vw,10vh);
+    margin: 4vh 0 0;
 }
 .img-wrapper {
     width:100%;
     margin-top:auto;
-    transform: translateY(-16px);
+    transform: translateY(-34px);
 }
 img.college {
     min-height: 400px;
@@ -49,11 +52,10 @@ img.college {
     display: block;
 }
 .btm-road-patch {
-    background-color:#6B8190;
-    padding: 6vh;
-    margin-top: -4vh;
+    background-color: #6B8190;
+    padding: 21px 0;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     left: 0;
     width: 100%;
 }
@@ -63,21 +65,28 @@ img.college {
     width: 100%;
 }
 .car-1 {
-    bottom: 7vh;
+    bottom: 11vh;
 }
 .car-2 {
-    bottom: 4vh;
+    bottom: 7vh;
 }
 .car-3 {
-    bottom: 2vh;
+    bottom: 4vh;
+}
+.digitalnotice-wrapper {
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 .digitalnotice {
-    width: clamp(300px, 24vw, 24vw);
+    width: 100%;
+    min-width: max-content;
+    max-width: 400px;
     margin: 0 auto;
     position: relative;
     padding: max(12px, 0.6vw); /* Space inside the box so text doesn't touch the border */
     border-radius: 20px;
     animation: dash-border-animate 1s linear infinite;
+    box-sizing: border-box;
 }
 /* Position the SVG perfectly over the container */
 .digitalnotice .dash-border {
@@ -146,6 +155,7 @@ img.post-icon {
     width: clamp(50px,6vh,6vh);
     height: clamp(49px,6vh,6vh);
     animation: post-icon-animate 0.6s ease-in-out infinite alternate;
+    z-index: 10;
 }
 @keyframes post-icon-animate {
     from {
