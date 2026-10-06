@@ -1,2 +1,10 @@
 aws-server-files
-digitalnotice/post/files
+
+digitalnotice/post/files/*
+!digitalnotice/post/files/.gitkeep
+
+stud/files/*
+!stud/files/.gitkeep
+
+tpo/files/*
+!tpo/files/.gitkeep
