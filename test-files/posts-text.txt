@@ -28,7 +28,7 @@ Image: admin-block.jpeg
 
 -- POST-1: --------------------------------------------
 A Heartly Welcome to CSE Students!
-Hello Freshers and Seniors, all classes are starting from tommorrow. So, gear up to dig into our Computer Science and Techs.
+Hello Freshers and Seniors, all classes are starting from tommorrow. So, gear up to dig into Computer Science and Techs.
 image: cse-block.jpg
 
 -- POST-2: --------------------------------------------
@@ -39,3 +39,56 @@ The waiting has ended.Volunteers efforts are awesome. We are eagerly waiting for
 🟣 Project Expos
 ⚪ Tech Workshops
 🟢 Exciting Prizes and many more...
+image: techvyuha-poster.jpg
+
+
+== MECH Dept =====================================================================
+
+-- POST-1: --------------------------------------------
+A Heartly Welcome to MECH Students!
+Hello Freshers and Seniors, all classes are starting from tommorrow. So, gear up to dig into Mechanical Engineering Concepts.
+
+-- Mech Dept
+
+-- POST-2: --------------------------------------------
+🎉 ICAMSME 2020!
+INTERNATIONAL CONFERENCE ON ADVANCES IN MATERIAL SCIENCE & MECHANICAL ENGINEERING was conducting from 7th - 9th Feb 2020.
+
+So students gear up for:
+🔵 Paper & Poster Presentations
+🟣 Project Expos
+⚪ Tech Workshops
+🟢 Exciting Prizes and many more...
+
+Organized by: Mech Dept
+image: mech-icamsme-2020.jpg
+
+
+== ECE Dept =====================================================================
+
+-- POST-1: --------------------------------------------
+A Heartly Welcome to ECE Students!
+Hello Freshers and Seniors, all classes are starting from tommorrow. So, gear up to dig into Electrical and Electronics Concepts.
+
+-- ECE Dept
+
+-- POST-2: --------------------------------------------
+Networking Club
+Hello students we are starting Networking club in collaboration with CSE dept, So interested students attend for inauguration at 5:00pm in ECE Seminar Hall today.
+
+-- POST-3: --------------------------------------------
+🌿 Happy Ugadi!
+A very Happy and Versatile Ugadi to all students, faculty, and staff. 
+
+🌿🥭🌶️🍯🥜🧂
+We wish that all your endeavours come true, just as the versatile flavors come together in the unique mix of the Ugadi chutney.
+
+-- College Management
+Image: ugadi-poster.jpg
+
+
+== Library Dept =====================================================================
+
+-- POST-1: --------------------------------------------
+Library Cards Issuing on July 10th, 2020
+Hello freshers, Library cards are issuing on july 10th, 2020. So collect the cards at Library at CSE block.

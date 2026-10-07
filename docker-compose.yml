@@ -2,16 +2,18 @@ services:
   # --- PHP Web Application Container ---
   web-app:
     build: . # Instructs Docker to build the image using the Dockerfile in this current folder
+    env_file:
+      - .env
     container_name: istian-local # Gives a friendly name to this container when running locally
     restart: always # Auto-recovery loop: instantly restarts the web server if it ever crashes
     ports:
       - "8080:8080" # Opens the doorway: maps external Port 8080 on your PC to internal Port 8080
     environment:
       - DB_HOST=mysql-db-local # Tells PHP to find the database using the container name "mysql-db-local" on our private network
-      - DB_USER=user # The login username for your PHP code to connect to MySQL
-      - DB_PASSWORD=placeholder_local_password # The login password for your PHP code to connect to MySQL
-      - DB_NAME_DIGITAL_DB=digital_notice_db # The specific database name your PHP code will read and write to
-      - DB_NAME_ISTIAN_DB=istian_db # second db
+      - DB_USER=${MYSQL_DB_USERNAME} # The login username for your PHP code to connect to MySQL
+      - DB_PASSWORD=${MYSQL_DB_USER_PWORD} # The login password for your PHP code to connect to MySQL
+      - DB_NAME_DIGITAL_DB=${MYSQL_DB_PRIMARY} # The specific database name your PHP code will read and write to
+      - DB_NAME_ISTIAN_DB=${MYSQL_DB_SECONDARY} # second db
     volumes:
       - ".:/var/www/html" # to sync files live!
     networks:
@@ -22,15 +24,17 @@ services:
   # --- MySQL Database Container ---
   database:
     image: mysql:8.0 # Tells Docker to automatically pull the official pre-built MySQL 8.0 system from the web
+    env_file:
+      - .env
     container_name: mysql-db-local # Gives a friendly name to this container when running locally
     restart: always # Auto-recovery loop: instantly restarts the database if it ever crashes
     ports:
       - "3307:3306" # Only in developemnt: Exposes MySQL out to your Windows PC on Port 3306
     environment:
-      - MYSQL_ROOT_PASSWORD=placeholder_local_root_password # Sets the master administration password for MySQL
-      - MYSQL_USER=user # Instructs MySQL to create a standard, limited-privilege user account
-      - MYSQL_PASSWORD=placeholder_local_password # Sets the password for that standard user account
-      - MYSQL_DATABASE=digital_notice_db # Instructs MySQL to automatically create this database on startup
+      - MYSQL_ROOT_PASSWORD=${MYSQL_DB_ROOT_PWORD} # Sets the master administration password for MySQL
+      - MYSQL_USER=${MYSQL_DB_USERNAME} # Instructs MySQL to create a standard, limited-privilege user account
+      - MYSQL_PASSWORD=${MYSQL_DB_USER_PWORD} # Sets the password for that standard user account
+      - MYSQL_DATABASE=${MYSQL_DB_PRIMARY} # Instructs MySQL to automatically create this database on startup
     volumes:
       - "db_data:/var/lib/mysql" # Persistent storage: maps database files to a safe, permanent folder on your hard drive
       - "./init.sql:/docker-entrypoint-initdb.d/init.sql" # Automatically runs your database tables layout script on first launch

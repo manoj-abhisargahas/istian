@@ -6,3 +6,5 @@ stud/files/*
 
 tpo/files/*
 !tpo/files/.gitkeep
+
+.env
